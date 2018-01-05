@@ -22,9 +22,15 @@ def post_new(request):
 			post.published_date = timezone.now()
 			post.save()
 			return redirect('post_detail', pk=post.pk)
+<<<<<<< HEAD
 	else:
 		form = PostForm()
 	return render(request, 'blog/post_edit.html', {'form': form})
+=======
+		else:
+			form = PostForm()
+			return render(request, 'blog/post_edit.html', {'form': form})
+>>>>>>> 3839cdf3b42c15deb9320c44d973bcda65e8eff9
 	
 def post_edit(request, pk):
 	post = get_object_or_404(Post, pk=pk)
@@ -36,6 +42,12 @@ def post_edit(request, pk):
 			post.published_date = timezone.now()
 			post.save()
 			return redirect('post_detail', pk=post.pk)
+<<<<<<< HEAD
 	else:
 		form = PostForm(instance=post)
 	return render(request, 'blog/post_edit.html', {'form': form})
+=======
+		else:
+			form = PostForm(instance=post)
+			return render(request, 'blog/post_edit.html', {'form': form})
+>>>>>>> 3839cdf3b42c15deb9320c44d973bcda65e8eff9
